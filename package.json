@@ -22,7 +22,8 @@
     "version": "pnpm --filter endpoint-file-server run version && pnpm --filter vite-plugin-dev-endpoint run version"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^7.6.0",
+    "@changesets/cli": "^2.26.0"
   },
   "packageManager": "pnpm@7.12.2"
 }
