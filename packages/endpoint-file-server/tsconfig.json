@@ -18,5 +18,5 @@
     "outDir": "dist",
     
   },
-  "include": ["src", "playwright.config.ts"],
+  "include": ["src"],
 }
