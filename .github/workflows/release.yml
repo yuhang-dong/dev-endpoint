@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2.2.1
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Packages
+        run: pnpm run build
+    
+
+      - name: Create Release Pull Request or Publish
+        run: npx changesets-with-bot
+        env:
+          # Needs access to publish to npm
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_APP_ID: ${{ secrets.ELLIOT_APP_ID }}
+          GITHUB_APP_PEM: ${{ secrets.ELLIOT_GITHUB_PEM }}
+          ACCOUNT_ID: ${{ github.repository_owner_id }}
+          VERSION_COMMAND: pnpm run version
+          PUBLISH_COMMAND: pnpm exec changeset publish
+          COMMIT_INFO: '[ci] release'
+          PR_TITLE: '[ci] release'
