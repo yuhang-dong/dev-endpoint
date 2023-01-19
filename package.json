@@ -19,7 +19,7 @@
   "workspaces":["packages/*"],
   "scripts": {
     "build": "pnpm --filter endpoint-file-server run build && pnpm --filter vite-plugin-dev-endpoint run build",
-    "version": "pnpm --filter endpoint-file-server run version && pnpm --filter vite-plugin-dev-endpoint run version",
+    "version": "changeset version && pnpm install --no-frozen-lockfile",
     "test": "pnpm run build && pnpm --filter endpoint-file-server run test && pnpm --filter vite-plugin-dev-endpoint run test"
   },
   "devDependencies": {
