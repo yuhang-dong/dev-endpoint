@@ -28,7 +28,8 @@
     "build": "tsc && vite build",
     "build-watch": "concurrently \"tsc --watch \" \"vite build --watch\"",
     "version": "changeset version && pnpm install --no-frozen-lockfile",
-    "test-server": "node tests-context/startTestServer"
+    "test-server": "node tests-context/startTestServer",
+    "test": "playwright test"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
