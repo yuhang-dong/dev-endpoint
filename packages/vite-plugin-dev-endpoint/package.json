@@ -39,7 +39,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
-    "endpoint-file-server": "workspace:*"
+    "endpoint-file-server": "0.0.1"
   },
   "packageManager": "pnpm@7.12.2",
   "publishConfig": {
