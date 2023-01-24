@@ -2,7 +2,13 @@
   "name": "vite-plugin-dev-endpoint",
   "version": "0.0.1",
   "description": "a vite plugin for mock backend response",
-  "keywords": ["vite", "plugin", "endpoint", "server", "node"],
+  "keywords": [
+    "vite",
+    "plugin",
+    "endpoint",
+    "server",
+    "node"
+  ],
   "homepage": "https://github.com/yuhang-dong/dev-endpoint/packages/vite-plugin-dev-endpoint#readme",
   "bugs": {
     "url": "https://github.com/yuhang-dong/dev-endpoint/issue",
@@ -17,15 +23,15 @@
   "type": "module",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     }
   },
   "scripts": {
-    "build": "tsc && vite build",
+    "build": "unbuild",
     "build-watch": "concurrently \"tsc --watch \" \"vite build --watch\"",
     "test": "playwright test",
     "test-server": "vite -c ./tests-context/vite.config.ts"
@@ -39,7 +45,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
-    "endpoint-file-server": "0.0.1"
+    "endpoint-file-server": "workspace:^0.0.1"
   },
   "packageManager": "pnpm@7.12.2",
   "publishConfig": {

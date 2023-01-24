@@ -17,16 +17,15 @@
   "type": "module",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     }
   },
   "scripts": {
-    "build": "tsc && vite build",
-    "build-watch": "concurrently \"tsc --watch \" \"vite build --watch\"",
+    "build": "unbuild",
     "test-server": "node tests-context/startTestServer",
     "test": "playwright test"
   },
