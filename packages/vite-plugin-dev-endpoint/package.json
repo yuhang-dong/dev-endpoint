@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-dev-endpoint",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a vite plugin for mock backend response",
   "keywords": [
     "vite",
@@ -45,7 +45,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
-    "endpoint-file-server": "workspace:^0.0.1"
+    "endpoint-file-server": "workspace:^0.0.2"
   },
   "packageManager": "pnpm@7.12.2",
   "publishConfig": {

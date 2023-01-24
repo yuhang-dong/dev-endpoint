@@ -1,8 +1,13 @@
 {
   "name": "endpoint-file-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A file server as endpoint, support range header",
-  "keywords": ["node", "http", "file", "range"],
+  "keywords": [
+    "node",
+    "http",
+    "file",
+    "range"
+  ],
   "homepage": "https://github.com/yuhang-dong/dev-endpoint/package/endpoint-file-server#readme",
   "bugs": {
     "url": "https://github.com/yuhang-dong/dev-endpoint/issue",
